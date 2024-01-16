@@ -15,5 +15,17 @@ PCA finds the linear combinations A=(a1, a2, ..., ap) on p-dim random vector X s
 
 To sum up, PCA forms linear combinations of the features that preserve as much of the variance as possible in descending order, subject to orthogonality (transform from correlated from uncorrelated) and be able to reduce data dimension.  
 
+## How to conduct PCA?
+Mannually conducting PCA requires the following steps:  
+1. Normalization: z-score normalization is usually recommended to be performed with PCA, so that the variance calculations will not be dominated by some attributes
+2. Generate the covariance matrix of the dataset
+3. Calculate eigenvectors and eigenvalues of the convariance matrix  
+    • Eigenvectors are the principal components  
+    • Eigenvalues are always positive. The larger the value, the more variance is captured by its eigenvector  
+4. Choose the appropriate number of principal components and transform the data accordingly (shift and rotate)
+
+Here we use PCA in sklearn.decomposition.  
+Further information: https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html  
+
 ## Dataset
 The csv file of Delta flight dataset is provided.  
